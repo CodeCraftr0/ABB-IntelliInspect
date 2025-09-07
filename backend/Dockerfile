@@ -20,5 +20,5 @@ RUN dotnet publish "IntelliInspect.API.csproj" -c Release -o /app/publish
 #final stage
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/publish .  #Copy the published application
+COPY --from=publish /app/publish .  
 ENTRYPOINT ["dotnet", "IntelliInspect.API.dll"]
