@@ -1,31 +1,29 @@
-# Build stage
+//Build stage
 FROM node:18-alpine AS build
 
+//Set working directory inside the container
 WORKDIR /app
 
-# Copy package files
 COPY package*.json ./
 
-# Install dependencies
+//Install dependencies
 RUN npm install --legacy-peer-deps
 
-# Copy source code
 COPY . .
 
-# Build the application
 RUN npm run build
 
-# Production stage
+//Production stage
 FROM nginx:alpine
 
-# Copy built application
+//Copy built application
 COPY --from=build /app/dist/intelliinspect-frontend /usr/share/nginx/html
 
-# Copy nginx configuration
+//Copy nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Expose port
+//Expose port
 EXPOSE 80
 
-# Start nginx
+//Start nginx
 CMD ["nginx", "-g", "daemon off;"]
