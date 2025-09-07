@@ -140,7 +140,7 @@ public class DatasetService : IDatasetService
     public async Task<DateRangeValidation> ValidateDateRangesAsync(DateRangeRequest request)
     {
         try
-        {
+        {   /*
             // Basic validation
             if (request.TrainingStart >= request.TrainingEnd ||
                 request.TestingStart >= request.TestingEnd ||
@@ -169,7 +169,7 @@ public class DatasetService : IDatasetService
                     IsValid = false,
                     Message = "Testing period must end before simulation period starts"
                 };
-            }
+            } */
 
             // Check if dates are within dataset range
             var datasetRange = await _context.DatasetRecords
