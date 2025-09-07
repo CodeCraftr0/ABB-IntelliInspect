@@ -457,7 +457,7 @@ export class SimulationComponent implements OnInit, OnDestroy {
       }
     });
   }
-
+ 
   private startStreaming(): void {
     this.simulationSubscription = interval(1000).subscribe(() => {
       this.apiService.streamSimulation('2021-01-01 00:00:00', '2021-12-31 23:59:59', this.simulationOffset).subscribe({
@@ -467,7 +467,7 @@ export class SimulationComponent implements OnInit, OnDestroy {
             this.completeSimulation();
             return;
           }
-
+          // add new predictions to top of stream
           this.recentPredictions.unshift(prediction);
           if (this.recentPredictions.length > this.maxRecentPredictions) {
             this.recentPredictions.pop();
@@ -491,7 +491,7 @@ export class SimulationComponent implements OnInit, OnDestroy {
       });
     });
   }
-
+ // stops simulation
   private stopSimulation(): void {
     this.isSimulating = false;
     if (this.simulationSubscription) {
