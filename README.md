@@ -2,6 +2,7 @@
 
 A full-stack AI-powered application for real-time quality control prediction using Kaggle Production Line sensor data.
 
+
 ## Architecture
 
 - **Frontend**: Angular 18+ with modern UI components

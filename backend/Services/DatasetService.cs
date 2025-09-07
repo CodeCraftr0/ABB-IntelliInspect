@@ -140,11 +140,7 @@ public class DatasetService : IDatasetService
     public async Task<DateRangeValidation> ValidateDateRangesAsync(DateRangeRequest request)
     {
         try
-        {
-            // Basic validation
-            
-
-
+        {   
             // Check if dates are within dataset range
             var datasetRange = await _context.DatasetRecords
                 .Select(r => new { r.SyntheticTimestamp })

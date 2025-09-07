@@ -445,10 +445,10 @@ export class ModelTrainingComponent implements OnInit {
 
     // Create training request with default date ranges
     const trainingRequest = {
-      trainStart: '2021-01-01 00:00:00',
-      trainEnd: '2021-06-30 23:59:59',
-      testStart: '2021-07-01 00:00:00',
-      testEnd: '2021-12-31 23:59:59'
+      trainStart: '2021-01-01T00:00:00',
+      trainEnd: '2021-06-30T23:59:59',
+      testStart: '2021-07-01T00:00:00',
+      testEnd: '2021-12-31T23:59:59'
     };
 
     this.apiService.trainModel(trainingRequest).subscribe({
