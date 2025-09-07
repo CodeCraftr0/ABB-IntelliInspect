@@ -12,13 +12,13 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
+# Copy entire application code
 COPY . .
 
 # Create directories for data and models
 RUN mkdir -p data models
 
-# Expose port
+# Open port for external Access
 EXPOSE 8000
 
 # Run the application
