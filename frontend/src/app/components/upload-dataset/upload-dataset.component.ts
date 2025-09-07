@@ -292,7 +292,7 @@ export class UploadDatasetComponent implements OnInit {
       this.handleFile(input.files[0]);
     }
   }
-
+  //validate and upload csv file
   private handleFile(file: File): void {
     if (!file.name.toLowerCase().endsWith('.csv')) {
       this.errorMessage = 'Please select a CSV file.';
@@ -319,7 +319,7 @@ export class UploadDatasetComponent implements OnInit {
       }
     });
   }
-
+  // reset upload state after failure
   resetUpload(): void {
     this.datasetMetadata = null;
     this.errorMessage = '';
@@ -333,7 +333,7 @@ export class UploadDatasetComponent implements OnInit {
   formatDate(dateString: string): string {
     return new Date(dateString).toLocaleDateString();
   }
-
+  // calculate duration between dates
   calculateDuration(start: string, end: string): string {
     const startDate = new Date(start);
     const endDate = new Date(end);
