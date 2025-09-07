@@ -1,7 +1,9 @@
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+//Base image for running the app
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base  
 WORKDIR /app
 EXPOSE 80
 
+//Copy only the project file
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY ["IntelliInspect.API.csproj", "."]
@@ -15,5 +17,5 @@ RUN dotnet publish "IntelliInspect.API.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=publish /app/publish .  //Copy the published application
 ENTRYPOINT ["dotnet", "IntelliInspect.API.dll"]
