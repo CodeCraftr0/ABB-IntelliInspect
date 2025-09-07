@@ -33,7 +33,7 @@ import { CommonModule } from '@angular/common';
 
       <footer class="app-footer">
         <div class="container text-center">
-          <p class="mb-0">&copy; 2024 IntelliInspect Hackathon. Built with Angular, .NET Core, and Python.</p>
+          <p class="mb-0">BUILT TO OUTRUN</p>
         </div>
       </footer>
     </div>
