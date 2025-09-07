@@ -13,8 +13,8 @@ A full-stack AI-powered application for real-time quality control prediction usi
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd abb1
+   git clone https://github.com/CodeCraftr0/ABB-IntelliInspect
+   cd ABB-IntelliInspect 
    ```
 
 2. **Start the application**
