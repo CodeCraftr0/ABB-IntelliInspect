@@ -7,7 +7,7 @@ A full-stack AI-powered application for real-time quality control prediction usi
 
 - **Frontend**: Angular 18+ with modern UI components
 - **Backend**: ASP.NET Core 8 API
-- **ML Service**: Python 3.13 + FastAPI with XGBoost/LightGBM
+- **ML Service**: Python 3.13 + FastAPI with XGBoost
 - **Deployment**: Docker + Docker Compose
 
 ## Quick Start
