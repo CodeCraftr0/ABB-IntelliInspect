@@ -474,6 +474,7 @@ import { NavigationComponent } from '../shared/navigation/navigation.component';
   `]
 })
 export class DateRangesComponent implements OnInit {
+  // stores user selected data ranges 
   dateRanges: DateRangeRequest = {
     trainingStart: '',
     trainingEnd: '',
@@ -523,7 +524,7 @@ export class DateRangesComponent implements OnInit {
               this.dateRanges.testingStart && this.dateRanges.testingEnd &&
               this.dateRanges.simulationStart && this.dateRanges.simulationEnd);
   }
-
+  // validates selected data ranges
   validateRanges(): void {
     if (!this.canValidate()) return;
 
@@ -572,7 +573,7 @@ export class DateRangesComponent implements OnInit {
         return 0;
     }
   }
-
+  // navigates to training step if data ranges are valid
   proceedToNextStep(): void {
     if (this.validationResult && this.validationResult.isValid) {
       this.router.navigate(['/training']);
